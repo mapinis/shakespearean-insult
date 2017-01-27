@@ -47,6 +47,7 @@ var generateInsult = function(){
 $( document ).ready(function(){
     $('#reroll').click(function(e) {
         e.preventDefault();
+        $('#insult').stop();
         $('#insult').animate({ opacity: 0 }, 100);
         setTimeout(generateInsult, 100);
     });
