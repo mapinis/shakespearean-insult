@@ -40,8 +40,19 @@ var generateInsult = function(){
     }
     insult[0] += ","
     insult = insult.join(" ");
-    $('#insult').text("Thou " + insult + "!");
-    $('#insult').animate({ opacity: 1 }, 200)
-}
 
-$( document ).ready(generateInsult);
+    $('#insult').text("Thou " + insult + "!");
+    $('#insult').animate({ opacity: 1 }, 300);
+    //$('#reroll').delay(25).animate({ opacity: 1 }, 200);
+};
+
+$( document ).ready(function(){
+    generateInsult();
+
+    $('#reroll').click(function(e) {
+        e.preventDefault();
+        $('#insult').animate({ opacity: 0 }, 100);
+        //$(this).animate({ opacity: 0}, 200);
+        setTimeout(generateInsult, 100);
+    });
+});
