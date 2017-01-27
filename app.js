@@ -41,6 +41,7 @@ var generateInsult = function(){
     insult[0] += ","
     insult = insult.join(" ");
     $('#insult').text("Thou " + insult + "!");
+    $('#insult').animate({ opacity: 1 }, 200)
 }
 
 $( document ).ready(generateInsult);
