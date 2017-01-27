@@ -6,14 +6,14 @@
 */
 
 //Don't worry, I used a Python script to generate these bits
-var word0 = ['artless', 'bawdy', 'beslubbering', 'bootless', 'churlish', 'cockered', 'clouted', 
+var words0 = ['artless', 'bawdy', 'beslubbering', 'bootless', 'churlish', 'cockered', 'clouted', 
  'craven', 'currish', 'dankish', 'dissembling', 'droning', 'errant', 'fawning', 'fobbing', 'froward', 
  'frothy', 'gleeking', 'goatish', 'gorbellied', 'impertinent', 'infectious', 'jarring', 'loggerheaded', 
  'lumpish', 'mammering', 'mangled', 'mewling', 'paunchy', 'pribbling', 'puking', 'puny', 'qualling', 
  'rank', 'reeky', 'roguish', 'ruttish', 'saucy', 'spleeny', 'spongy', 'surly', 'tottering', 
- 'unmuzzled', 'vain', 'venomed', 'villainous', 'warped', 'wayward', 'weedy', 'yeasty']
+ 'unmuzzled', 'vain', 'venomed', 'villainous', 'warped', 'wayward', 'weedy', 'yeasty'];
 
-var word1 = ['base-court', 'bat-fowling', 'beef-witted', 'beetle-headed', 'boil-brained', 
+var words1 = ['base-court', 'bat-fowling', 'beef-witted', 'beetle-headed', 'boil-brained', 
  'clapper-clawed', 'clay-brained', 'common-kissing', 'crook-pated', 'dismal-dreaming', 'dizzy-eyed', 
  'doghearted', 'dread-bolted', 'earth-vexing', 'elf-skinned', 'fat-kidneyed', 'fen-sucked', 
  'flap-mouthed', 'fly-bitten', 'folly-fallen', 'fool-born', 'full-gorged', 'guts-griping', 
@@ -21,16 +21,26 @@ var word1 = ['base-court', 'bat-fowling', 'beef-witted', 'beetle-headed', 'boil-
  'ill-nurtured', 'knotty-pated', 'milk-livered', 'motley-minded', 'onion-eyed', 'plume-plucked', 
  'pottle-deep', 'pox-marked', 'reeling-ripe', 'rough-hewn', 'rude-growing', 'rump-fed', 'shard-borne', 
  'sheep-biting', 'spur-galled', 'swag-bellied', 'tardy-gaited', 'tickle-brained', 'toad-spotted', 
- 'unchin-snouted', 'weather-bitten']
+ 'unchin-snouted', 'weather-bitten'];
 
-var word2 = ['apple-john', 'baggage', 'barnacle', 'bladder', 'boar-pig', 'bugbear', 'bum-bailey',
+var words2 = ['apple-john', 'baggage', 'barnacle', 'bladder', 'boar-pig', 'bugbear', 'bum-bailey',
  'canker-blossom', 'clack-dish', 'clotpole', 'coxcomb', 'codpiece', 'death-token', 'dewberry', 
  'flap-dragon', 'flax-wench', 'flirt-gill', 'foot-licker', 'fustilarian', 'giglet', 'gudgeon', 
  'haggard', 'harpy', 'hedge-pig', 'horn-beast', 'hugger-mugger', 'joithead', 'lewdster', 'lout', 
  'maggot-pie', 'malt-worm', 'mammet', 'measle', 'minnow', 'miscreant', 'moldwarp', 'mumble-news', 
  'nut-hook', 'pigeon-egg', 'pignut', 'puttock', 'pumpion', 'ratsbane', 'scut', 'skainsmate', 
- 'strumpet', 'varlot', 'vassal', 'whey-face', 'wagtail']
+ 'strumpet', 'varlot', 'vassal', 'whey-face', 'wagtail'];
 
-$( document ).ready(function(){
+var words = [words0, words1, words2];
 
-});
+var generateInsult = function(){
+    var insult = [];
+    for(arr of words){
+        insult.push(arr[Math.floor(Math.random() * arr.length)])
+    }
+    insult[0] += ","
+    insult = insult.join(" ");
+    $('#insult').text("Thou " + insult + "!");
+}
+
+$( document ).ready(generateInsult);
