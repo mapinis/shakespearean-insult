@@ -45,6 +45,12 @@ var generateInsult = function(){
     $('#insult').animate({ opacity: 1 }, 300);
 };
 $( document ).ready(function(){
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+        $('#insult').css({"font-size": "6em", "margin-top": "-10%"});
+        $('#reroll').html('<i class="fa fa-refresh" aria-hidden="true"></i>');
+        $('#reroll').css({"color": "#212121", "margin-top": "50%", "font-size": "7em"});
+    }
+
     $('#reroll').click(function(e) {
         e.preventDefault();
         $('#insult').stop();
