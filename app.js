@@ -1,5 +1,5 @@
 /*
-    Shakespearian Insult Generator
+    Shakespearean Insult Generator
     Written by Mark Apinis
     1/26/17
     Thank You to http://www.pangloss.com/seidel/shake_rule.html for the insults

@@ -1,1 +1,1 @@
-# shakespearian-insult-client
+# shakespearean-insults
